@@ -15,7 +15,7 @@ const Sidebar = () => {
         getUsers();
     }, [getUsers]);
 
-    const filteredUsers = showOnlineOnly ? users.filter((user) => onlineUsers.includes(user._id)) : users;
+    const filteredUsers = showOnlineOnly ? users?.filter((user) => onlineUsers.includes(user._id)) : users;
 
     if (isUsersLoading) {
         return <SidebarSkeleton />
@@ -50,7 +50,7 @@ const Sidebar = () => {
                             key={user._id}
                             onClick={() => setSelectedUser(user)}
                             className={`w-full p-3 flex items-center gap-3
-                        hover:bg-base-300 transition-colors ${selectedUser?._id === user._id ? "bg-base-300 ring-1 ring-base-300" : ""}`}
+                        hover:bg-base-300 transition-colors ${selectedUser?._id === user?._id ? "bg-base-300 ring-1 ring-base-300" : ""}`}
                         >
                             <div className='relative mx-auto lg:mx-0'>
                                 <img
@@ -69,7 +69,7 @@ const Sidebar = () => {
                                     {user?.fullName}
                                 </div>
                                 <div className='text-sm text-zinc-400'>
-                                    {onlineUsers.includes(user._id) ? "Online" : "Offline"}
+                                    {onlineUsers.includes(user?._id) ? "Online" : "Offline"}
                                 </div>
                             </div>
                         </button>
