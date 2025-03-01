@@ -13,7 +13,7 @@ export const signup = async (req, res) => {
                 message: "All fields are required!!"
             });
         }
-        if (password.length < 6) {
+        if (password?.length < 6) {
             return res.status(400).json({
                 success: false,
                 message: "Password length must be 6 characters!!"

@@ -39,7 +39,7 @@ const Sidebar = () => {
                         />
                         <span className='text-sm'>Show Online Only</span>
                     </label>
-                    <span>({onlineUsers.length - 1} online)</span>
+                    <span>({onlineUsers?.length - 1} online)</span>
                 </div>
             </div>
 
@@ -76,7 +76,7 @@ const Sidebar = () => {
                     ))
                 }
                 {
-                    filteredUsers.length === 0 && (
+                    filteredUsers?.length === 0 && (
                         <div className='text-center text-zinc-500 py-4'>No Online Users</div>
                     )
                 }
