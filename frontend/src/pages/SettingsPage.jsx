@@ -23,7 +23,7 @@ const SettingsPage = () => {
 
         <div className='grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2'>
           {
-            THEMES.map((t) => (
+            THEMES?.map((t) => (
               <button key={t} className={`group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors 
                   ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
                 `}
@@ -69,7 +69,7 @@ const SettingsPage = () => {
                 {/* Chat Messages  */}
                 <div className='p-4 space-y-4 min-h-[200px] overflow-y-auto bg-base-100'>
                   {
-                    PREVIEW_MESSAGES.map((message) => (
+                    PREVIEW_MESSAGES?.map((message) => (
                       <div key={message.id} className={`flex ${message.isSilent ? "justify-end" : "justify-start"}`}>
                         <div className={`max-w-[80%] rounded-xl p-3 shadow-sm ${message.isSilent ? "bg-primary text-primary-content" : "bg-base-200"}`}>
                           <p className='text-sm'>{message.content}</p>
